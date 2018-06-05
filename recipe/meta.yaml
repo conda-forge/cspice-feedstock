@@ -17,22 +17,26 @@ package:
 
 source:
   fn: {{ name }}.tar.Z  # [not win]
+  fn: {{ name }}.zip  # [win]
   url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.tar.Z  # [not win]
+  url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.zip  # [not win]
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
-    - gcc     # [not win]
+    - {{ compiler('c') }}
   run:
     - libgcc  # [not win]
 
 test:
   # Some package might need a `test/commands` key to check CLI.
   # List all the packages/modules that `run_test.py` imports.
+  requires:
+    - {{ compiler('c') }}
+
   files:
     - test_cspice.c
 
