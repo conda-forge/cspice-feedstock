@@ -19,7 +19,7 @@ source:
   fn: {{ name }}.tar.Z  # [not win]
   fn: {{ name }}.zip  # [win]
   url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.tar.Z  # [not win]
-  url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.zip  # [not win]
+  url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.zip  # [win]
   sha256: {{ sha256 }}
 
 build:
