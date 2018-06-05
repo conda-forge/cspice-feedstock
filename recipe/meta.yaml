@@ -21,18 +21,21 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
-    - gcc     # [not win]
+    - {{ compiler('c') }}
   run:
     - libgcc  # [not win]
 
 test:
   # Some package might need a `test/commands` key to check CLI.
   # List all the packages/modules that `run_test.py` imports.
+  requires:
+    - {{ compiler('c') }}
+
   files:
     - test_cspice.c
 
