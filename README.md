@@ -9,19 +9,21 @@ Feedstock license: BSD 3-Clause
 
 Summary: NASA ancillary information system
 
-[u'SPICE is an ancillary information system that provides scientists and\nengineers the capability to include space geometry and event data into\nmission design, science observation planning, and science data analysis\nsoftware.\n']
+['SPICE is an ancillary information system that provides scientists and\nengineers the capability to include space geometry and event data into\nmission design, science observation planning, and science data analysis\nsoftware.\n']
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/cspice-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/cspice-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/cspice-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/cspice-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/cspice-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/cspice-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/cspice-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/cspice-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/cspice/badges/version.svg)](https://anaconda.org/conda-forge/cspice)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/cspice/badges/downloads.svg)](https://anaconda.org/conda-forge/cspice)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cspice-green.svg)](https://anaconda.org/conda-forge/cspice) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cspice.svg)](https://anaconda.org/conda-forge/cspice) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cspice.svg)](https://anaconda.org/conda-forge/cspice) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cspice.svg)](https://anaconda.org/conda-forge/cspice) |
 
 Installing cspice
 =================
