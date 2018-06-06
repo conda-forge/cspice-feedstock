@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir ${PREFIX}/include/cspice
+mkdir -p ${PREFIX}/include/cspice
 
 cd $(find ${SRC_DIR} -name "lib" -type d)
 
