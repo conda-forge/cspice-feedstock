@@ -1,6 +1,15 @@
 #!/bin/bash
 
-LIBNAME=libcspice.so.66
+set -x
+
+if [ "$(uname)" == "Darwin" ];
+then
+    LIBNAME=libcspice.66.dylib
+    EXTRA_FLAGS="-dynamiclib -install_name @rpath/${LIBNAME}"
+else
+    LIBNAME=libcspice.so.66
+    EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
+fi
 
 mkdir -p ${PREFIX}/include/cspice
 mkdir -p ${PREFIX}/lib
@@ -8,11 +17,16 @@ mkdir -p ${PREFIX}/lib
 cd $(find ${SRC_DIR} -name "lib" -type d)
 
 ar -x cspice.a
-gcc -shared -Wl,-soname,${LIBNAME} -fPIC -lm *.o -o ${LIBNAME}
+${CC} ${EXTRA_FLAGS} -fPIC -lm *.o -o ${LIBNAME}
 
 cd $(find ${SRC_DIR} -name "lib" -type d)/..
 
 cp lib/${LIBNAME} ${PREFIX}/lib/
 cp include/*.h ${PREFIX}/include/cspice/
 
-ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.so
+if [ "$(uname)" == "Darwin" ];
+then
+    ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.dylib
+else
+    ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.so
+fi
