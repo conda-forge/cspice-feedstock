@@ -7,7 +7,7 @@ cd %SRC_DIR%\src\cspice
 
 call makeDynamicSpice.bat
 
-copy "cspice.dll" %LIBRARY_LIB%
+copy "cspice.dll" %LIBRARY_BIN%
 
 if errorlevel 1 exit 1
 
