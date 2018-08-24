@@ -29,8 +29,6 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-  run:
-    - libgcc  # [not win]
 
 test:
   # Some package might need a `test/commands` key to check CLI.
