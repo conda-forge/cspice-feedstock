@@ -11,7 +11,12 @@ fi
 
 mkdir -p ${PREFIX}/include/cspice
 mkdir -p ${PREFIX}/lib
+mkdir -p ${PREFIX}/bin
 
+# Copy the binaries
+cp $(find $(find ${SRC_DIR} -name "exe" -type d) -type f) ${PREFIX}/bin
+
+# Package dynamic libraries
 cd $(find ${SRC_DIR} -name "lib" -type d)
 
 ar -x cspice.a
