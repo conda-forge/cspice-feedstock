@@ -14,7 +14,7 @@ mkdir -p ${PREFIX}/lib
 mkdir -p ${PREFIX}/bin
 
 # Copy the binaries
-cp $(find ${SRC_DIR}/exe -type f) ${PREFIX}/bin
+cp $(find $(find ${SRC_DIR} -name "exe" -type d) -type f) ${PREFIX}/bin
 
 # Package dynamic libraries
 cd $(find ${SRC_DIR} -name "lib" -type d)
