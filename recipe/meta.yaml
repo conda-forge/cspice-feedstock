@@ -23,7 +23,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1004
+  number: 1005
   skip: true  # [win and vc<14]
 
 requirements:
@@ -50,8 +50,7 @@ about:
   license: Public Domain
   summary: 'NASA ancillary information system'
 
-  description:
-    - |
+  description: |
       SPICE is an ancillary information system that provides scientists and
       engineers the capability to include space geometry and event data into
       mission design, science observation planning, and science data analysis
