@@ -4,8 +4,6 @@
 
 {% set platform_segment = "PC_Linux_GCC_64bit" %}                                      # [linux64]
 {% set sha256 = "93cd4fbce5818f8b7fecf3914c5756b8d41fd5bdaaeac1f4037b5a5410bc4768" %}  # [linux64]
-{% set platform_segment = "PC_Windows_VisualC_32bit" %}                                # [win32]
-{% set sha256 = "db48e5beddc0e50f7a0224bb2c6f2b39fc38f84628ad5cd455e847fc70aa5e75" %}  # [win32]
 {% set platform_segment = "PC_Windows_VisualC_64bit" %}                                # [win64]
 {% set sha256 = "b29dfb0b41ae8322c60ee9d162beb97433d21e12843ecbe03d819e5edef45920" %}  # [win64]
 {% set platform_segment = "MacIntel_OSX_AppleC_64bit" %}                               # [osx]
@@ -23,7 +21,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1007
+  number: 1008
   skip: true  # [win and vc<14]
 
 requirements:
@@ -31,12 +29,24 @@ requirements:
     - {{ compiler('c') }}
 
 test:
+  requires:
+    - {{ compiler('c') }}
+
+  files:
+    - test_cspice.c
+  
+  commands:
+    - "version"  # [not win]
+    - "chronos"  # [not win]
+    - "$CC test_cspice.c -I$PREFIX/include -L$PREFIX/lib -lcspice -o test_cspice"  # [not win]
+    - "LD_LIBRARY_PATH=$PREFIX/lib ./test_cspice"  # [not win] 
+
   downstreams:
     - spiceypy
 
 about:
   home: https://naif.jpl.nasa.gov/naif/toolkit.html
-  license: Public Domain
+  license: MIT
   summary: 'NASA ancillary information system'
 
   description: |
@@ -48,5 +58,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - juanlu001
+    - astrojuanlu
     - AndrewAnnex
