@@ -3,7 +3,7 @@ About cspice
 
 Home: https://naif.jpl.nasa.gov/naif/toolkit.html
 
-Package license: Public Domain
+Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
@@ -160,5 +160,5 @@ Feedstock Maintainers
 =====================
 
 * [@AndrewAnnex](https://github.com/AndrewAnnex/)
-* [@juanlu001](https://github.com/juanlu001/)
+* [@astrojuanlu](https://github.com/astrojuanlu/)
 
