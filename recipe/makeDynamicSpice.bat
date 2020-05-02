@@ -47,3 +47,5 @@ rem
 link /DLL /OUT:cspice.dll /DEF:cspice.def /IMPLIB:cspice.lib @temp.lst
 @echo on
 rem Finished Linking Spice, makeDynamicSpice.bat completed.
+rem see if we can dumpbin on the file
+dumpbin /headers cspice.dll
