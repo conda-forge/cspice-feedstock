@@ -5,7 +5,7 @@ Home: https://naif.jpl.nasa.gov/naif/toolkit.html
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: NASA ancillary information system
 
