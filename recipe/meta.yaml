@@ -9,6 +9,11 @@
 {% set platform_segment = "MacIntel_OSX_AppleC_64bit" %}                               # [osx]
 {% set sha256 = "f5d48c4b0d558c5d71e8bf6fcdf135b0943210c1ff91f8191dfc447419a6b12e" %}  # [osx]
 
+
+build_platform:
+    osx_arm64: osx_64
+test_on_native_only: true
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -21,7 +26,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1010
+  number: 1011
   skip: true  # [win and vc<14]
 
 requirements:
