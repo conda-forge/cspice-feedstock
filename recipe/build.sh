@@ -9,22 +9,25 @@ else
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
 
+# Build and Package dynamic libraries
+#   cd to lib dir
+cd ${SRC_DIR}/lib
+#   compile c code
+${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c ./../src/csupport/*.c
+#   make the shared library
+${CC} ${EXTRA_FLAGS} -fPIC -m64 -O2 -pedantic -o ${LIBNAME} *.o
+#   cd up to src dirctory
+cd ${SRC_DIR} 
+
+
+# Deploy the built shared libraries and executables
+#   make the target directories
 mkdir -p ${PREFIX}/include/cspice
 mkdir -p ${PREFIX}/lib
 mkdir -p ${PREFIX}/bin
-
-# Copy the binaries
+#   copy the files to where they are needed
 cp $(find $(find ${SRC_DIR} -name "exe" -type d) -type f) ${PREFIX}/bin
-
-# Package dynamic libraries
-cd $(find ${SRC_DIR} -name "lib" -type d)
-
-ar -x cspice.a
-${CC} ${EXTRA_FLAGS} -fPIC -lm *.o -o ${LIBNAME}
-
-cd $(find ${SRC_DIR} -name "lib" -type d)/..
-
-cp lib/${LIBNAME} ${PREFIX}/lib/
+cp $lib/{LIBNAME} ${PREFIX}/lib/
 cp include/*.h ${PREFIX}/include/cspice/
 
 if [ "$(uname)" == "Darwin" ];
