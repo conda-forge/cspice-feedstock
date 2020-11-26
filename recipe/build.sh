@@ -13,9 +13,9 @@ fi
 #   cd to lib dir
 cd ${SRC_DIR}/lib
 #   compile c code
-${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c ./../src/csupport/*.c
+${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c ./../src/csupport/*.c 
 #   make the shared library
-${CC} ${EXTRA_FLAGS} -fPIC -m64 -O2 -pedantic -o ${LIBNAME} *.o
+${CC} ${EXTRA_FLAGS} -fPIC -m64 -O2 -pedantic -o ${LIBNAME} *.o -lm
 #   cd up to src dirctory
 cd ${SRC_DIR} 
 
