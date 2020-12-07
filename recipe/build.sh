@@ -8,6 +8,10 @@ else
     LIBNAME=libcspice.so.66
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
+# static library files names
+CSPICENM=cspice.66.a
+CSUPPTNM=csupport.66.a
+
 #########################################
 # Build Shared library
 #########################################
@@ -29,6 +33,10 @@ cd ${SRC_DIR}/src/cspice
 ./mkprodct.csh
 cd ${SRC_DIR}/src/csupport
 ./mkprodct.csh
+#  rename static libraries to include version number
+cd ${SRC_DIR}/lib
+mv cspice.a ${CSPICENM}
+mv csupport.a ${CSUPPTNM}
 #  cd up to src dirctory
 cd ${SRC_DIR}
 
@@ -61,3 +69,5 @@ then
 else
     ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.so
 fi
+ln -s ${PREFIX}/lib/${CSPICENM} ${PREFIX}/lib/cspice.a
+ln -s ${PREFIX}/lib/${CSUPPTNM} ${PREFIX}/lib/csupport.a
