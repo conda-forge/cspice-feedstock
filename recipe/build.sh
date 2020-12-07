@@ -8,21 +8,43 @@ else
     LIBNAME=libcspice.so.66
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
-
-# Build and Package dynamic libraries
+#########################################
+# Build Shared library
+#########################################
 #  cd to lib dir
 cd ${SRC_DIR}/lib
 #  compile c code
 ${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
 ${CC} ${EXTRA_FLAGS} -fPIC -m64 -O2 -pedantic -o ${LIBNAME} *.o -lm
-#  todo add rebuilding of static library here 
 #  cd up to src dirctory
-cd ${SRC_DIR} 
+cd ${SRC_DIR}
 
+#########################################
+# Build Static library using NAIF scripts
+#########################################
+#  rebuild static library using NAIF scripts
+export TKCOMPILER = ${CC}
+cd ${SRC_DIR}/src/cspice
+./mkprodct.csh
+cd ${SRC_DIR}/src/csupport
+./mkprodct.csh
+#  cd up to src dirctory
+cd ${SRC_DIR}
 
-# todo add rebuilding of all executeables
+#########################################
+# Build executables using NAIF scripts
+#########################################
+# cd into src directory
+cd ${SRC_DIR}/src
+# build each tool using NAIF scripts
+for i in *_c; do cd $i && ./mkprodct.csh && cd -; done
+#  cd up to src directory
+cd ${SRC_DIR}
 
+#########################################
+# deploy built products
+#########################################
 # Deploy the built shared libraries and executables
 #  make the target directories
 mkdir -p ${PREFIX}/include/cspice
@@ -30,10 +52,9 @@ mkdir -p ${PREFIX}/lib
 mkdir -p ${PREFIX}/bin
 #  copy the files to where they are needed
 cp $(find $(find ${SRC_DIR} -name "exe" -type d) -type f) ${PREFIX}/bin
-cp lib/${LIBNAME} ${PREFIX}/lib/
+cp lib/* ${PREFIX}/lib/
 cp include/*.h ${PREFIX}/include/cspice/
-
-# finally copy the dylib or so file to where it is needed
+#  finally make symbolic links for sans version file names
 if [ "$(uname)" == "Darwin" ];
 then
     ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.dylib
