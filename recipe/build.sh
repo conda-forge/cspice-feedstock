@@ -13,11 +13,13 @@ fi
 #  cd to lib dir
 cd ${SRC_DIR}/lib
 #  compile c code
-${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c ./../src/csupport/*.c 
+${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
 ${CC} ${EXTRA_FLAGS} -fPIC -m64 -O2 -pedantic -o ${LIBNAME} *.o -lm
+#  todo add rebuilding of static library here 
 #  cd up to src dirctory
 cd ${SRC_DIR} 
+
 
 # todo add rebuilding of all executeables
 
