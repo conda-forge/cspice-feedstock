@@ -68,7 +68,9 @@ mkdir -p ${PREFIX}/lib
 mkdir -p ${PREFIX}/bin
 #  copy the files to where they are needed
 cp $(find $(find ${SRC_DIR} -name "exe" -type d) -type f) ${PREFIX}/bin
-cp lib/* ${PREFIX}/lib/
+cp lib/${LIBNAME} ${PREFIX}/lib/
+cp lib/${CSPICENM} ${PREFIX}/lib/
+cp lib/${CSUPPTNM} ${PREFIX}/lib/
 cp include/*.h ${PREFIX}/include/cspice/
 #  finally make symbolic links for sans version file names
 if [ "$(uname)" == "Darwin" ];
