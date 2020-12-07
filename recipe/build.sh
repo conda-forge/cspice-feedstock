@@ -35,8 +35,8 @@ cd ${SRC_DIR}/src/csupport
 ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
 #  rename static libraries to include version number
 cd ${SRC_DIR}/lib
-mv cspice.a ${CSPICENM}
-mv csupport.a ${CSUPPTNM}
+cp cspice.a ${CSPICENM}
+cp csupport.a ${CSUPPTNM}
 #  cd up to src directory
 cd ${SRC_DIR}
 
@@ -49,7 +49,9 @@ cd ${SRC_DIR}/src
 for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
 #  cd up to src directory
 cd ${SRC_DIR}
-
+#  remove cspice.a and csupport.a as we want those to be symlinked
+rm ${SRC_DIR}/lib/cspice.a
+rm ${SRC_DIR}/lib/csupport.a
 #########################################
 # deploy built products
 #########################################
