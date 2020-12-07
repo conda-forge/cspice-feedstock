@@ -27,17 +27,12 @@ cd ${SRC_DIR}
 #########################################
 # Build Static library using NAIF scripts
 #########################################
-# make csh available from tcsh on the path, courtesy of @chrisburr
-mkdir "${SRC_DIR}/my-bin/"
-ln -s "${BUILD_PREFIX}/bin/tsch" "${SRC_DIR}/my-bin/csh"
-export PATH="${SRC_DIR}/my-bin:$PATH"
-echo `which csh`
 #  rebuild static library using NAIF scripts
 export TKCOMPILER=${CC}
 cd ${SRC_DIR}/src/cspice
-tcsh ./mkprodct.csh
+${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
 cd ${SRC_DIR}/src/csupport
-tcsh ./mkprodct.csh
+${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
 #  rename static libraries to include version number
 cd ${SRC_DIR}/lib
 mv cspice.a ${CSPICENM}
@@ -51,7 +46,7 @@ cd ${SRC_DIR}
 # cd into src directory
 cd ${SRC_DIR}/src
 # build each tool using NAIF scripts
-for i in *_c; do cd $i && csh ./mkprodct.csh && cd -; done
+for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
 #  cd up to src directory
 cd ${SRC_DIR}
 
