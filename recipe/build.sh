@@ -21,7 +21,7 @@ cd ${SRC_DIR}/lib
 ${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
 ${CC} ${EXTRA_FLAGS} -fPIC -m64 -O2 -pedantic -o ${LIBNAME} *.o -lm
-#  cd up to src dirctory
+#  cd up to src directory
 cd ${SRC_DIR}
 
 #########################################
@@ -37,7 +37,7 @@ cd ${SRC_DIR}/src/csupport
 cd ${SRC_DIR}/lib
 mv cspice.a ${CSPICENM}
 mv csupport.a ${CSUPPTNM}
-#  cd up to src dirctory
+#  cd up to src directory
 cd ${SRC_DIR}
 
 #########################################
