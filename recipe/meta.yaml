@@ -21,7 +21,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1011
+  number: 1012
   skip: true  # [win and vc<14]
 
 requirements:
@@ -37,8 +37,8 @@ test:
     - test_cspice.c
   
   commands:
-    - "version"  # [not win]
-    - "chronos"  # [not win]
+    - "version" 
+    - "chronos"
     - "$CC test_cspice.c -I$PREFIX/include -L$PREFIX/lib -lcspice -o test_cspice"  # [not win]
     - "LD_LIBRARY_PATH=$PREFIX/lib ./test_cspice"  # [not win] 
 
