@@ -21,12 +21,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1010
+  number: 1011
   skip: true  # [win and vc<14]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - tcsh  # [not win]
 
 test:
   requires:
