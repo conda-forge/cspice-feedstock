@@ -17,6 +17,9 @@ CSUPPTNM=csupport.66.a
 #########################################
 #  cd to lib dir
 cd ${SRC_DIR}/lib
+#  rm static libraries, needed for next static build steps
+rm cspice.a
+rm csupport.a
 #  compile c code
 ${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
@@ -43,15 +46,18 @@ cd ${SRC_DIR}
 #########################################
 # Build executables using NAIF scripts
 #########################################
+# rm all prebuilt executables to ensure we are building and testing new files
+rm ${SRC_DIR}/exe/*
 # cd into src directory
 cd ${SRC_DIR}/src
 # build each tool using NAIF scripts
 for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
 #  cd up to src directory
 cd ${SRC_DIR}
-#  remove cspice.a and csupport.a as we want those to be symlinked
+#  remove cspice.a and csupport.a as we want those to be symlinked, don't do this earlier for tool building
 rm ${SRC_DIR}/lib/cspice.a
 rm ${SRC_DIR}/lib/csupport.a
+
 #########################################
 # deploy built products
 #########################################

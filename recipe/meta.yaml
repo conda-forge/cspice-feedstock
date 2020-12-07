@@ -27,7 +27,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - tcsh # [not win]
+    - tcsh  # [not win]
 
 test:
   requires:
