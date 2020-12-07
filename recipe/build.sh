@@ -28,7 +28,7 @@ cd ${SRC_DIR}
 # Build Static library using NAIF scripts
 #########################################
 #  rebuild static library using NAIF scripts
-export TKCOMPILER = ${CC}
+export TKCOMPILER=${CC}
 cd ${SRC_DIR}/src/cspice
 ./mkprodct.csh
 cd ${SRC_DIR}/src/csupport
