@@ -27,7 +27,7 @@ if errorlevel 1 exit 1
 rem now copy static libraries to location they need to be in to get into path
 copy lib\cspice.lib %LIBRARY_LIB%\
 if errorlevel 1 exit 1
-copy lib\cupport.lib %LIBRARY_LIB%\
+copy lib\csupport.lib %LIBRARY_LIB%\
 if errorlevel 1 exit 1
 
 rem now copy executables to location they need to be in to get into path
