@@ -3,4 +3,9 @@ max_py_ver: '37'
 max_r_ver: '35'
 provider:
   win: azure
+  linux_aarch64: linux_64
+  linux_ppc64le: linux_64
+  osx_arm64: osx_64
 conda_forge_output_validation: true
+test_on_native_only: True
+upload_on_branch: master
