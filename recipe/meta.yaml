@@ -2,8 +2,8 @@
 {% set version = "66" %}
 {% set root_url = "https://naif.jpl.nasa.gov/pub/naif/misc/toolkit_N%(version)04d/C"|format(version=version | int) %}
 
-{% set platform_segment = "PC_Linux_GCC_64bit" %}                                      # [linux64]
-{% set sha256 = "93cd4fbce5818f8b7fecf3914c5756b8d41fd5bdaaeac1f4037b5a5410bc4768" %}  # [linux64]
+{% set platform_segment = "PC_Linux_GCC_64bit" %}                                      # [linux64 or armv6l or armv7l or aarch64 or ppc64le]
+{% set sha256 = "93cd4fbce5818f8b7fecf3914c5756b8d41fd5bdaaeac1f4037b5a5410bc4768" %}  # [linux64 or armv6l or armv7l or aarch64 or ppc64le]
 {% set platform_segment = "PC_Windows_VisualC_64bit" %}                                # [win64]
 {% set sha256 = "b29dfb0b41ae8322c60ee9d162beb97433d21e12843ecbe03d819e5edef45920" %}  # [win64]
 {% set platform_segment = "MacIntel_OSX_AppleC_64bit" %}                               # [osx]
