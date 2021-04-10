@@ -4,10 +4,14 @@ if [ "$(uname)" == "Darwin" ];
 then
     LIBNAME=libcspice.66.dylib
     EXTRA_FLAGS="-dynamiclib -install_name @rpath/${LIBNAME}"
+    # global options for cspice
+    TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO"
+    TKLINKOPTIONS="-lm"
 else
     LIBNAME=libcspice.so.66
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
+
 # static library files names
 CSPICENM=cspice.66.a
 CSUPPTNM=csupport.66.a
