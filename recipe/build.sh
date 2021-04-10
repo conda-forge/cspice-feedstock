@@ -22,7 +22,7 @@ cd ${SRC_DIR}/lib
 rm cspice.a
 rm csupport.a
 #  compile c code
-    ${CC} ${CFLAGS} -Iinclude -c -fPIC -O2 -ansi -pedantic ./../src/cspice/*.c 
+${CC} ${CFLAGS} -Iinclude -c -fPIC -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
 ${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -o ${LIBNAME} *.o -lm
 
@@ -35,19 +35,9 @@ cd ${SRC_DIR}
 #  rebuild static library using NAIF scripts
 export TKCOMPILER=${CC}
 cd ${SRC_DIR}/src/cspice
-if [ "$CI" == "drone" ];
-then
-    TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO" TKLINKOPTIONS="-lm" ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
-else
-    ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
-fi  
+${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh  
 cd ${SRC_DIR}/src/csupport
-if [ "$CI" == "drone" ];
-then
-    TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO" TKLINKOPTIONS="-lm" ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
-else
-    ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
-fi  
+${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh 
 #  rename static libraries to include version number
 cd ${SRC_DIR}/lib
 cp cspice.a ${CSPICENM}
@@ -63,12 +53,7 @@ rm ${SRC_DIR}/exe/*
 # cd into src directory
 cd ${SRC_DIR}/src
 # build each tool using NAIF scripts
-if [ "$CI" == "drone" ];
-then
-    for i in *_c; do cd $i && TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO" TKLINKOPTIONS="-lm" ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
-else
-    for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
-fi  
+for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done 
 #  cd up to src directory
 cd ${SRC_DIR}
 #  remove cspice.a and csupport.a as we want those to be symlinked, don't do this earlier for tool building
