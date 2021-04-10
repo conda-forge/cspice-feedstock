@@ -22,19 +22,9 @@ cd ${SRC_DIR}/lib
 rm cspice.a
 rm csupport.a
 #  compile c code
-if [ "$CI" == "drone" ];
-then
-    ${CC} -Iinclude -c -fPIC -O2 -ansi -pedantic ./../src/cspice/*.c 
-else
-    ${CC} -Iinclude -c -fPIC -O2 -ansi -pedantic -m64 ./../src/cspice/*.c 
-fi  
+    ${CC} ${CFLAGS} -Iinclude -c -fPIC -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
-if [ "$CI" == "drone" ];
-then
-    ${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -o ${LIBNAME} *.o -lm
-else
-    ${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -m64 -o ${LIBNAME} *.o -lm
-fi  
+${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -o ${LIBNAME} *.o -lm
 
 #  cd up to src directory
 cd ${SRC_DIR}
