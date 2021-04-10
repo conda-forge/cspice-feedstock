@@ -21,7 +21,7 @@ source:
   sha256: {{ sha256 }}
   
   patches:
-    - 0001_remove_m64_linux.patch  # [linux64 or armv6l or armv7l or aarch64 or ppc64le]
+    - 0001_remove_m64_linux.patch  # [linux64 or aarch64]
     - 0001_remove_m64_osx.patch  # [osx]
 
 build:
