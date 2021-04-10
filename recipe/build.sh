@@ -8,7 +8,6 @@ else
     LIBNAME=libcspice.so.66
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
-
 # static library files names
 CSPICENM=cspice.66.a
 CSUPPTNM=csupport.66.a
@@ -25,7 +24,6 @@ rm csupport.a
 ${CC} ${CFLAGS} -Iinclude -c -fPIC -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
 ${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -o ${LIBNAME} *.o -lm
-
 #  cd up to src directory
 cd ${SRC_DIR}
 
@@ -35,9 +33,9 @@ cd ${SRC_DIR}
 #  rebuild static library using NAIF scripts
 export TKCOMPILER=${CC}
 cd ${SRC_DIR}/src/cspice
-${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh  
+${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
 cd ${SRC_DIR}/src/csupport
-${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh 
+${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
 #  rename static libraries to include version number
 cd ${SRC_DIR}/lib
 cp cspice.a ${CSPICENM}
@@ -53,7 +51,7 @@ rm ${SRC_DIR}/exe/*
 # cd into src directory
 cd ${SRC_DIR}/src
 # build each tool using NAIF scripts
-for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done 
+for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
 #  cd up to src directory
 cd ${SRC_DIR}
 #  remove cspice.a and csupport.a as we want those to be symlinked, don't do this earlier for tool building
