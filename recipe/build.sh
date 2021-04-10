@@ -5,8 +5,8 @@ then
     LIBNAME=libcspice.66.dylib
     EXTRA_FLAGS="-dynamiclib -install_name @rpath/${LIBNAME}"
     # global options for cspice
-    TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO"
-    TKLINKOPTIONS="-lm"
+    export TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO"
+    export TKLINKOPTIONS="-lm"
 else
     LIBNAME=libcspice.so.66
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
