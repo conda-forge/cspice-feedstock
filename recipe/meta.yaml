@@ -19,9 +19,6 @@ source:
   url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.tar.Z  # [not win]
   url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.zip  # [win]
   sha256: {{ sha256 }}
-  
-  patches:
-    - apple_silicon_inquire.patch  # [osx-arm64]
 
 build:
   number: 1013
