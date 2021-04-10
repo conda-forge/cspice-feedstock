@@ -21,7 +21,7 @@ source:
   sha256: {{ sha256 }}
   
   patches:
-    - apple_silicon_inquire.patch # [osx-arm64]
+    - apple_silicon_inquire.patch  # [osx-arm64]
 
 build:
   number: 1013
