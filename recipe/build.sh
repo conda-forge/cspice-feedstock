@@ -21,9 +21,9 @@ cd ${SRC_DIR}/lib
 rm cspice.a
 rm csupport.a
 #  compile c code
-${CC} -Iinclude -c -fPIC -m64 -O2 -ansi -pedantic ./../src/cspice/*.c 
+${CC} -Iinclude -c -fPIC -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
-${CC} ${EXTRA_FLAGS} -fPIC -m64 -O2 -pedantic -o ${LIBNAME} *.o -lm
+${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -o ${LIBNAME} *.o -lm
 #  cd up to src directory
 cd ${SRC_DIR}
 
