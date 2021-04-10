@@ -100,7 +100,6 @@ jobs:
     - script: |
         set "GIT_BRANCH=%BUILD_SOURCEBRANCHNAME%"
         set "FEEDSTOCK_NAME=%BUILD_REPOSITORY_NAME:*/=%"
-        set "UPLOAD_ON_BRANCH=master"
         call activate base
         upload_package --validate --feedstock-name="%FEEDSTOCK_NAME%" .\ ".\recipe" .ci_support\%CONFIG%.yaml
       displayName: Upload package
