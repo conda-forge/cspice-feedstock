@@ -4,9 +4,6 @@ if [ "$(uname)" == "Darwin" ];
 then
     LIBNAME=libcspice.66.dylib
     EXTRA_FLAGS="-dynamiclib -install_name @rpath/${LIBNAME}"
-    # global options for cspice
-    export TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO"
-    export TKLINKOPTIONS="-lm"
 else
     LIBNAME=libcspice.so.66
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
@@ -37,9 +34,9 @@ cd ${SRC_DIR}
 #  rebuild static library using NAIF scripts
 export TKCOMPILER=${CC}
 cd ${SRC_DIR}/src/cspice
-${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
+TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO" TKLINKOPTIONS="-lm" ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
 cd ${SRC_DIR}/src/csupport
-${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
+TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO" TKLINKOPTIONS="-lm" ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh
 #  rename static libraries to include version number
 cd ${SRC_DIR}/lib
 cp cspice.a ${CSPICENM}
@@ -55,7 +52,7 @@ rm ${SRC_DIR}/exe/*
 # cd into src directory
 cd ${SRC_DIR}/src
 # build each tool using NAIF scripts
-for i in *_c; do cd $i && ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
+for i in *_c; do cd $i && TKCOMPILEOPTIONS="-c -ansi -O2 -fPIC -DNON_UNIX_STDIO" TKLINKOPTIONS="-lm" ${BUILD_PREFIX}/bin/tcsh ./mkprodct.csh && cd -; done
 #  cd up to src directory
 cd ${SRC_DIR}
 #  remove cspice.a and csupport.a as we want those to be symlinked, don't do this earlier for tool building
