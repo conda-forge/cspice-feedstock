@@ -1,7 +1,13 @@
-diff --git a/src/brief_c/mkprodct.csh b/src/brief_c/mkprodct.csh
+commit 63924f35bd296f6442f06101e9ce93c495ab474f
+Author: Andrew Annex <ama6fy@virginia.edu>
+Date:   Sat Apr 10 18:53:00 2021 -0400
+
+    removed m64 flags
+
+diff --git a/cspice/src/brief_c/mkprodct.csh b/cspice/src/brief_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/brief_c/mkprodct.csh
-+++ b/src/brief_c/mkprodct.csh
+--- a/cspice/src/brief_c/mkprodct.csh
++++ b/cspice/src/brief_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -20,10 +26,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/chrnos_c/mkprodct.csh b/src/chrnos_c/mkprodct.csh
+diff --git a/cspice/src/chrnos_c/mkprodct.csh b/cspice/src/chrnos_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/chrnos_c/mkprodct.csh
-+++ b/src/chrnos_c/mkprodct.csh
+--- a/cspice/src/chrnos_c/mkprodct.csh
++++ b/cspice/src/chrnos_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -42,10 +48,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/ckbref_c/mkprodct.csh b/src/ckbref_c/mkprodct.csh
+diff --git a/cspice/src/ckbref_c/mkprodct.csh b/cspice/src/ckbref_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/ckbref_c/mkprodct.csh
-+++ b/src/ckbref_c/mkprodct.csh
+--- a/cspice/src/ckbref_c/mkprodct.csh
++++ b/cspice/src/ckbref_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -64,10 +70,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/commnt_c/mkprodct.csh b/src/commnt_c/mkprodct.csh
+diff --git a/cspice/src/commnt_c/mkprodct.csh b/cspice/src/commnt_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/commnt_c/mkprodct.csh
-+++ b/src/commnt_c/mkprodct.csh
+--- a/cspice/src/commnt_c/mkprodct.csh
++++ b/cspice/src/commnt_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -86,10 +92,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/cook_c/mkprodct.csh b/src/cook_c/mkprodct.csh
+diff --git a/cspice/src/cook_c/mkprodct.csh b/cspice/src/cook_c/mkprodct.csh
 index 2a49ee7..9653500 100755
---- a/src/cook_c/mkprodct.csh
-+++ b/src/cook_c/mkprodct.csh
+--- a/cspice/src/cook_c/mkprodct.csh
++++ b/cspice/src/cook_c/mkprodct.csh
 @@ -104,7 +104,7 @@ else
  #                        implementation
  #
@@ -108,10 +114,10 @@ index 2a49ee7..9653500 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/cspice/mkprodct.csh b/src/cspice/mkprodct.csh
+diff --git a/cspice/src/cspice/mkprodct.csh b/cspice/src/cspice/mkprodct.csh
 index e08a643..929c5b6 100755
---- a/src/cspice/mkprodct.csh
-+++ b/src/cspice/mkprodct.csh
+--- a/cspice/src/cspice/mkprodct.csh
++++ b/cspice/src/cspice/mkprodct.csh
 @@ -169,7 +169,7 @@ else
  #                        implementation
  #
@@ -130,10 +136,10 @@ index e08a643..929c5b6 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/csupport/mkprodct.csh b/src/csupport/mkprodct.csh
+diff --git a/cspice/src/csupport/mkprodct.csh b/cspice/src/csupport/mkprodct.csh
 index 2244d9a..5639a39 100755
---- a/src/csupport/mkprodct.csh
-+++ b/src/csupport/mkprodct.csh
+--- a/cspice/src/csupport/mkprodct.csh
++++ b/cspice/src/csupport/mkprodct.csh
 @@ -165,7 +165,7 @@ else
  #
  #     -fPIC              position-independent code
@@ -152,10 +158,10 @@ index 2244d9a..5639a39 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/dskbrief_c/mkprodct.csh b/src/dskbrief_c/mkprodct.csh
+diff --git a/cspice/src/dskbrief_c/mkprodct.csh b/cspice/src/dskbrief_c/mkprodct.csh
 index 74c5584..a2f5a93 100755
---- a/src/dskbrief_c/mkprodct.csh
-+++ b/src/dskbrief_c/mkprodct.csh
+--- a/cspice/src/dskbrief_c/mkprodct.csh
++++ b/cspice/src/dskbrief_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -174,10 +180,10 @@ index 74c5584..a2f5a93 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/dskexp_c/mkprodct.csh b/src/dskexp_c/mkprodct.csh
+diff --git a/cspice/src/dskexp_c/mkprodct.csh b/cspice/src/dskexp_c/mkprodct.csh
 index 74c5584..a2f5a93 100755
---- a/src/dskexp_c/mkprodct.csh
-+++ b/src/dskexp_c/mkprodct.csh
+--- a/cspice/src/dskexp_c/mkprodct.csh
++++ b/cspice/src/dskexp_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -196,10 +202,10 @@ index 74c5584..a2f5a93 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/frmdif_c/mkprodct.csh b/src/frmdif_c/mkprodct.csh
+diff --git a/cspice/src/frmdif_c/mkprodct.csh b/cspice/src/frmdif_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/frmdif_c/mkprodct.csh
-+++ b/src/frmdif_c/mkprodct.csh
+--- a/cspice/src/frmdif_c/mkprodct.csh
++++ b/cspice/src/frmdif_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -218,10 +224,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/inspkt_c/mkprodct.csh b/src/inspkt_c/mkprodct.csh
+diff --git a/cspice/src/inspkt_c/mkprodct.csh b/cspice/src/inspkt_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/inspkt_c/mkprodct.csh
-+++ b/src/inspkt_c/mkprodct.csh
+--- a/cspice/src/inspkt_c/mkprodct.csh
++++ b/cspice/src/inspkt_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -240,10 +246,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/mkdsk_c/mkprodct.csh b/src/mkdsk_c/mkprodct.csh
+diff --git a/cspice/src/mkdsk_c/mkprodct.csh b/cspice/src/mkdsk_c/mkprodct.csh
 index 74c5584..a2f5a93 100755
---- a/src/mkdsk_c/mkprodct.csh
-+++ b/src/mkdsk_c/mkprodct.csh
+--- a/cspice/src/mkdsk_c/mkprodct.csh
++++ b/cspice/src/mkdsk_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -262,10 +268,10 @@ index 74c5584..a2f5a93 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/mkspk_c/mkprodct.csh b/src/mkspk_c/mkprodct.csh
+diff --git a/cspice/src/mkspk_c/mkprodct.csh b/cspice/src/mkspk_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/mkspk_c/mkprodct.csh
-+++ b/src/mkspk_c/mkprodct.csh
+--- a/cspice/src/mkspk_c/mkprodct.csh
++++ b/cspice/src/mkspk_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -284,10 +290,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/msopck_c/mkprodct.csh b/src/msopck_c/mkprodct.csh
+diff --git a/cspice/src/msopck_c/mkprodct.csh b/cspice/src/msopck_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/msopck_c/mkprodct.csh
-+++ b/src/msopck_c/mkprodct.csh
+--- a/cspice/src/msopck_c/mkprodct.csh
++++ b/cspice/src/msopck_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -306,10 +312,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/spacit_c/mkprodct.csh b/src/spacit_c/mkprodct.csh
+diff --git a/cspice/src/spacit_c/mkprodct.csh b/cspice/src/spacit_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/spacit_c/mkprodct.csh
-+++ b/src/spacit_c/mkprodct.csh
+--- a/cspice/src/spacit_c/mkprodct.csh
++++ b/cspice/src/spacit_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -328,10 +334,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/spkdif_c/mkprodct.csh b/src/spkdif_c/mkprodct.csh
+diff --git a/cspice/src/spkdif_c/mkprodct.csh b/cspice/src/spkdif_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/spkdif_c/mkprodct.csh
-+++ b/src/spkdif_c/mkprodct.csh
+--- a/cspice/src/spkdif_c/mkprodct.csh
++++ b/cspice/src/spkdif_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -350,10 +356,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/spkmrg_c/mkprodct.csh b/src/spkmrg_c/mkprodct.csh
+diff --git a/cspice/src/spkmrg_c/mkprodct.csh b/cspice/src/spkmrg_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/spkmrg_c/mkprodct.csh
-+++ b/src/spkmrg_c/mkprodct.csh
+--- a/cspice/src/spkmrg_c/mkprodct.csh
++++ b/cspice/src/spkmrg_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -372,10 +378,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/tobin_c/mkprodct.csh b/src/tobin_c/mkprodct.csh
+diff --git a/cspice/src/tobin_c/mkprodct.csh b/cspice/src/tobin_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/tobin_c/mkprodct.csh
-+++ b/src/tobin_c/mkprodct.csh
+--- a/cspice/src/tobin_c/mkprodct.csh
++++ b/cspice/src/tobin_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -394,10 +400,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/toxfr_c/mkprodct.csh b/src/toxfr_c/mkprodct.csh
+diff --git a/cspice/src/toxfr_c/mkprodct.csh b/cspice/src/toxfr_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/toxfr_c/mkprodct.csh
-+++ b/src/toxfr_c/mkprodct.csh
+--- a/cspice/src/toxfr_c/mkprodct.csh
++++ b/cspice/src/toxfr_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
@@ -416,10 +422,10 @@ index d7232cd..bc35a67 100755
     echo " "
     echo "      Setting default link options:"
     echo "      $TKLINKOPTIONS"
-diff --git a/src/versn_c/mkprodct.csh b/src/versn_c/mkprodct.csh
+diff --git a/cspice/src/versn_c/mkprodct.csh b/cspice/src/versn_c/mkprodct.csh
 index d7232cd..bc35a67 100755
---- a/src/versn_c/mkprodct.csh
-+++ b/src/versn_c/mkprodct.csh
+--- a/cspice/src/versn_c/mkprodct.csh
++++ b/cspice/src/versn_c/mkprodct.csh
 @@ -160,7 +160,7 @@ else
  #                        implementation
  #
