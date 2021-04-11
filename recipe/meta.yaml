@@ -21,11 +21,16 @@ source:
   sha256: {{ sha256 }}
   
   patches:
-    - 0001_remove_m64_linux.patch  # [linux64 or aarch64]
-    - 0001_remove_m64_osx.patch  # [osx]
+    - 0001-patch-for-n66-dskx02.c.patch  # [not win]
+    - 0002-patch-for-n66-subpnt.c.patch  # [not win]
+    - 0001-patch-for-n66-dskx02.c-windows.patch  # [win]
+    - 0002-patch-for-n66-subpnt.c-windows.patch  # [win]
+    - 0003_remove_m64_linux.patch  # [linux64 or aarch64]
+    - 0003_remove_m64_osx.patch  # [osx]
+    - 0004_inquire_unistd.patch  # [osx]
 
 build:
-  number: 1013
+  number: 1014
 
 requirements:
   build:
