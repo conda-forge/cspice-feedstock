@@ -23,7 +23,7 @@ rm csupport.a
 #  compile c code
 ${CC} ${CFLAGS} -Iinclude -c -fPIC -O2 -ansi -pedantic ./../src/cspice/*.c 
 #  make the shared library
-${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -o ${LIBNAME} *.o -lm
+${CC} ${EXTRA_FLAGS} -fPIC -O2 -pedantic -o ${LIBNAME} *.o ${LDFLAGS} -lm
 #  cd up to src directory
 cd ${SRC_DIR}
 
