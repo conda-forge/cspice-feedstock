@@ -30,7 +30,7 @@ source:
     - 0004_inquire_unistd.patch  # [osx]
 
 build:
-  number: 1014
+  number: 1015
 
 requirements:
   build:
@@ -51,7 +51,7 @@ test:
     - "LD_LIBRARY_PATH=$PREFIX/lib ./test_cspice"  # [not win] 
 
   downstreams:
-    - spiceypy  # [not win]
+    - spiceypy
 
 about:
   home: https://naif.jpl.nasa.gov/naif/toolkit.html
