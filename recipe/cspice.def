@@ -559,7 +559,7 @@ EXPORTS			appndc_c
 				swpool_c
 				sxform_c
 				szpool_c
-				tagnpt_c
+				tangpt_c
 				termpt_c
 				timdef_c
 				timout_c
