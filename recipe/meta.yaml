@@ -47,7 +47,7 @@ test:
     - "LD_LIBRARY_PATH=$PREFIX/lib ./test_cspice"  # [not win] 
 
   downstreams:
-    - spiceypy
+    - spiceypy >= 4.0.2
 
 about:
   home: https://naif.jpl.nasa.gov/naif/toolkit.html
