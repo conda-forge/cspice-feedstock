@@ -2,15 +2,15 @@
 
 if [ "$(uname)" == "Darwin" ];
 then
-    LIBNAME=libcspice.66.dylib
+    LIBNAME=libcspice.67.dylib
     EXTRA_FLAGS="-dynamiclib -install_name @rpath/${LIBNAME}"
 else
-    LIBNAME=libcspice.so.66
+    LIBNAME=libcspice.so.67
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
 # static library files names
-CSPICENM=cspice.66.a
-CSUPPTNM=csupport.66.a
+CSPICENM=cspice.67.a
+CSUPPTNM=csupport.67.a
 
 #########################################
 # Build Shared library
