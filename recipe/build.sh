@@ -76,8 +76,12 @@ cp include/*.h ${PREFIX}/include/cspice/
 if [ "$(uname)" == "Darwin" ];
 then
     ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.dylib
+    ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.66.dylib
 else
     ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.so
+    ln -s ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/libcspice.so.66
 fi
 ln -s ${PREFIX}/lib/${CSPICENM} ${PREFIX}/lib/cspice.a
+ln -s ${PREFIX}/lib/${CSPICENM} ${PREFIX}/lib/cspice.66.a
 ln -s ${PREFIX}/lib/${CSUPPTNM} ${PREFIX}/lib/csupport.a
+ln -s ${PREFIX}/lib/${CSUPPTNM} ${PREFIX}/lib/csupport.66.a
