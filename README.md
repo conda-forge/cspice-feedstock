@@ -1,11 +1,11 @@
-About cspice
-============
+About cspice-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cspice-feedstock/blob/main/LICENSE.txt)
 
 Home: https://naif.jpl.nasa.gov/naif/toolkit.html
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cspice-feedstock/blob/main/LICENSE.txt)
 
 Summary: NASA ancillary information system
 
@@ -207,7 +207,4 @@ Feedstock Maintainers
 
 * [@AndrewAnnex](https://github.com/AndrewAnnex/)
 * [@astrojuanlu](https://github.com/astrojuanlu/)
-
-
-<!-- dummy commit to enable rerendering -->
 
