@@ -4,8 +4,8 @@
 
 {% set file_ext = "tar.Z" %}  # [not win]
 {% set file_ext = "zip" %}  # [win]
-{% set platform_segment = "PC_Linux_GCC_64bit" %}                                      # [linux64 or aarch64 or ppc64le]
-{% set sha256 = "60a95b51a6472f1afe7e40d77ebdee43c12bb5b8823676ccc74692ddfede06ce" %}  # [linux64 or aarch64 or ppc64le]
+{% set platform_segment = "PC_Linux_GCC_64bit" %}                                      # [linux64 or aarch64]
+{% set sha256 = "60a95b51a6472f1afe7e40d77ebdee43c12bb5b8823676ccc74692ddfede06ce" %}  # [linux64 or aarch64]
 {% set platform_segment = "PC_Windows_VisualC_64bit" %}                                # [win64]
 {% set sha256 = "98d60b814b412fa55294aeaaeb7dab46d849cc87a8b709ffe835d08de17625dc" %}  # [win64]
 {% set platform_segment = "MacIntel_OSX_AppleC_64bit" %}                               # [osx]
@@ -29,12 +29,13 @@ build:
 
 requirements:
   build:
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - tcsh  # [not win]
 
 test:
   requires:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
 
   files:
@@ -43,7 +44,8 @@ test:
   commands:
     - "version" 
     - "chronos"
-    - "$CC test_cspice.c -I$PREFIX/include -L$PREFIX/lib -lcspice -o test_cspice"  # [not win]
+    - "$CC test_cspice.c -I$PREFIX/include -L$PREFIX/lib -lcspice -o test_cspice -Wl,-rpath,$PREFIX/lib"  # [not win]
+    - "otool -L test_cspice" # [not win] 
     - "LD_LIBRARY_PATH=$PREFIX/lib ./test_cspice"  # [not win] 
 
   downstreams:
