@@ -208,6 +208,3 @@ Feedstock Maintainers
 * [@AndrewAnnex](https://github.com/AndrewAnnex/)
 * [@astrojuanlu](https://github.com/astrojuanlu/)
 
-
-<!-- dummy commit to enable rerendering -->
-
