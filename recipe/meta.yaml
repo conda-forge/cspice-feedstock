@@ -26,16 +26,18 @@ source:
     - 0003_remove_m64_linux.patch  # [linux64 or aarch64]
 
 build:
-  number: 6
+  number: 7
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - tcsh  # [not win]
 
 test:
   requires:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
 
   files:
     - test_cspice.c
