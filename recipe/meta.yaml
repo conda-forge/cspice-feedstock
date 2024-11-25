@@ -18,14 +18,18 @@ package:
   version: {{ version }}
 
 source:
+  {% if platform_segment is defined %}
   url: {{ root_url }}/{{ platform_segment }}/packages/{{ name }}.{{ file_ext }}
+  {% endif %}
+  {% if sha256 is defined %}
   sha256: {{ sha256 }}
+  {% endif %}
   
   patches:
     - 0003_remove_m64_linux.patch  # [linux64 or aarch64]
 
 build:
-  number: 7
+  number: 8
 
 requirements:
   build:
