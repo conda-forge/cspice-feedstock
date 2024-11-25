@@ -45,7 +45,8 @@ test:
     - "version" 
     - "chronos"
     - "$CC test_cspice.c -I$PREFIX/include -L$PREFIX/lib -lcspice -o test_cspice -Wl,-rpath,$PREFIX/lib"  # [not win]
-    - "otool -L test_cspice"  # [not win] 
+    - "otool -L test_cspice"  # [osx] 
+    - "ldd ./test_cspice" # [linux64 or aarch64]
     - "LD_LIBRARY_PATH=$PREFIX/lib ./test_cspice"  # [not win] 
 
   downstreams:
