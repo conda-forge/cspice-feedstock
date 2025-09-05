@@ -1,6 +1,10 @@
 #!/bin/bash
 set -ex
 
+mkdir -p ${PREFIX}/include/cspice
+mkdir -p ${PREFIX}/lib
+mkdir -p ${PREFIX}/bin
+
 mkdir build
 cd build
 

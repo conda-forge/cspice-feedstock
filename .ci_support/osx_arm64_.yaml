@@ -18,3 +18,15 @@ macos_machine:
 - arm64-apple-darwin20.0.0
 target_platform:
 - osx-arm64
+
+CONDA_BUILD_SYSROOT:
+- /var/folders/6r/0_ck04691rx1vj2x5knvq8s00000gn/T/tmp.cI10zVorv2/MacOSX11.0.sdk
+
+
+CONDA_BUILD_SYSROOT:
+- /var/folders/6r/0_ck04691rx1vj2x5knvq8s00000gn/T/tmp.BMqHzb4NHS/MacOSX11.0.sdk
+
+
+CONDA_BUILD_SYSROOT:
+- /var/folders/6r/0_ck04691rx1vj2x5knvq8s00000gn/T/tmp.38QCCfwnlj/MacOSX11.0.sdk
+
