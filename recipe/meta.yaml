@@ -29,7 +29,7 @@ source:
     - 0003_remove_m64_linux.patch  # [linux64 or aarch64]
 
 build:
-  number: 8
+  number: 10
 
 requirements:
   build:
