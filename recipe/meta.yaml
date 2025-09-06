@@ -35,6 +35,9 @@ test:
     - "ldd ./test_cspice"  # [linux64 or aarch64]
     - "LD_LIBRARY_PATH=$PREFIX/lib ./test_cspice"  # [not win] 
 
+  downstreams:
+    - spiceypy >= 5.0.0
+
 about:
   home: https://naif.jpl.nasa.gov/naif/toolkit.html
   license: MIT
