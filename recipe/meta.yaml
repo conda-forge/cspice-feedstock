@@ -11,7 +11,7 @@ source:
   git_rev: v0.0.7
 
 build:
-  number: 11
+  number: 12
 
 requirements:
   build:
