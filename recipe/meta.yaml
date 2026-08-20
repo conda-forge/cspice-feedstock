@@ -11,7 +11,9 @@ source:
   git_rev: v0.0.7
 
 build:
-  number: 12
+  number: 13
+  run_exports:
+    - {{ pin_subpackage('cspice', max_pin='x') }}
 
 requirements:
   build:
